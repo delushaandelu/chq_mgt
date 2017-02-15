@@ -55,7 +55,7 @@
                     <li class="xn-openable">
                         <a href="#"><span class="fa fa-cogs"></span> <span class="xn-text">Bank</span></a>                        
                         <ul>
-                            <li><a href="ui-widgets.html"><span class="fa fa-list-alt"></span> Manage Bank Accounts</a></li>                            
+                            <li><a href="bankac.php"><span class="fa fa-list-alt"></span> Manage Bank Accounts</a></li>                            
                             <li><a href="ui-elements.html"><span class="fa fa-cogs"></span> Manage Banks</a></li>
                             <li><a href="ui-buttons.html"><span class="fa fa-square-o"></span> View Info</a></li>                            
                             </ul>
