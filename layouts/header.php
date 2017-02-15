@@ -47,7 +47,7 @@
                         <a href="#"><span class="fa fa-file-text-o"></span> <span class="xn-text">Recived CHQ</span></a>
                         <ul>
                             <li><a href="rec_add.php"><span class="fa fa-image"></span> Add CHQ info</a></li>
-                            <li><a href="pages-profile.html"><span class="fa fa-user"></span> Mange CHQ Info</a></li>
+                            <li><a href="rec_mgt.php"><span class="fa fa-user"></span> Mange CHQ Info</a></li>
                             <!-- adsa <li><a href="pages-address-book.html"><span class="fa fa-users"></span></a></li>  -->           
                         </ul>
                     </li>

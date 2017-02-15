@@ -131,7 +131,7 @@
                                 $chqDate =$_POST['chqDate'];
                                 $receivedDate =$_POST['receivedDate'];
 
-                                $sql="INSERT INTO rec_chq (bank,accNo,chqNo,amount,name,chqDate,todayDate) VALUES ('$bank','$accNo','$chqNo','$amount','$name','$chqDate','$todayDate')";
+                                $sql="INSERT INTO rec_chq (bank,chqNo,amount,name,chqDate,receivedDate) VALUES ('$bank','$chqNo','$amount','$name','$chqDate','$receivedDate')";
     
 
                                 if (mysqli_query($db, $sql) === TRUE) {
