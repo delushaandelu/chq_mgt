@@ -12,19 +12,12 @@
         
         <!-- CSS INCLUDE -->        
         <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
-        <!-- EOF CSS INCLUDE -->  
-        <style>
-            img{
-                margin-left:20%;
-                height:80%;
-            }
-        </style>                                  
+        <!-- EOF CSS INCLUDE -->                             
     </head>
     <body>
          <!-- HEADER SECTION -->  
        <?php include("layouts/header.php");?>
             <div class="page-content-wrap" id="img">
-                <img src="assets/images/dash.jpg">
             </div>
          <!-- FOOTER SECTION -->  
         <?php include("layouts/footer.php"); ?>    
