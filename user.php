@@ -68,7 +68,7 @@
                                                 <div class="col-md-9">                                            
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                        <input type="text" name="password" class="form-control"/>
+                                                        <input type="password" name="password" class="form-control"/>
                                                     </div>                                            
                                                     <span class="help-block">Account password</span>
                                                 </div>

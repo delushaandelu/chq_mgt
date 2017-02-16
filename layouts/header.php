@@ -64,7 +64,6 @@
                         <ul>
                             <li><a href="backup.php"><span class="fa fa-arrow-right"></span> Take Backup</a></li>
                             <li><a href="user.php"><span class="fa fa-file-text-o"></span> Manager User</a></li>
-                            <li><a href="form-validation.html"><span class="fa fa-list-alt"></span> Change Password</a></li>
                         </ul>
                     </li>
                     

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>        
         <!-- META SECTION -->
         <title>CHQ Manage</title>            
@@ -12,12 +13,25 @@
         
         <!-- CSS INCLUDE -->        
         <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
-        <!-- EOF CSS INCLUDE -->                                    
+        <!-- EOF CSS INCLUDE -->         
+        <script>
+            function printPageArea(areaID){
+            var printContent = document.getElementById(areaID);
+            var WinPrint = window.open('', '', 'width=900,height=650');
+            WinPrint.document.write(printContent.innerHTML);
+            WinPrint.document.close();
+            WinPrint.focus();
+            WinPrint.print();
+            WinPrint.close();
+        }
+        </script>                           
     </head>
     <body>
          <!-- HEADER SECTION -->  
+         
        <?php include("layouts/header.php");?>
-        <div class="page-content-wrap">
+       <a href="javascript:void(0);" id="print_button2" style="width: 130px; padding: 5px 8px 5px 8px;text-align: center;float: right;background-color: #1caf9a;color: #fff;text-decoration: none; margin: 10px;" onclick="printPageArea('print')">Print</a>
+        <div class="page-content-wrap" id="print">
             <!-- PAGE CONTENT WRAPPER -->
                 <div class="page-content-wrap">                
                 
@@ -110,6 +124,7 @@
         <script type="text/javascript" src="js/plugins.js"></script>        
         <script type="text/javascript" src="js/actions.js"></script>        
     </body>
+    </div>
 </html>
 
 
