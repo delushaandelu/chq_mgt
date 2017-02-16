@@ -39,33 +39,12 @@
                                             
                                             <div class="form-group">
                                                 <label class="col-md-3 control-label">Bank Name</label>
-                                                <div class="col-md-9">                                                                                            
-                                                    <select class="form-control select" name="bank">
-                                                    <?php 
-                                                        include("layouts/database.php");
-                                                        $sql= "SELECT * FROM bank ";
-                                                        $result = $db->query($sql);  
-                                                        while($row = $result->fetch_assoc()) {
-                                                    ?>
-                                                        <option><?php echo $row['name'] ?></option>
-                                                    <?php
-                                                        }
-                                                    ?>
-                                                    </select>
-                                                    <span class="help-block">Select the bank here</span>
-                                                </div>
-                                            </div>
-
-                                            
-
-                                            <div class="form-group">
-                                                <label class="col-md-3 control-label">Account Number</label>
                                                 <div class="col-md-9">                                            
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                        <input type="text" name="account" class="form-control"/>
+                                                        <input type="text" name="name" class="form-control"/>
                                                     </div>                                            
-                                                    <span class="help-block">Account number here</span>
+                                                    <span class="help-block">Name of the Bank</span>
                                                 </div>
                                             </div>
                                             
@@ -73,13 +52,13 @@
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Holder Name</label>
+                                                <label class="col-md-3 control-label">Branch Name</label>
                                                 <div class="col-md-9">                                            
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                        <input type="text" name="holderName" class="form-control"/>
+                                                        <input type="text" name="branch" class="form-control"/>
                                                     </div>                                            
-                                                    <span class="help-block">Account holder name</span>
+                                                    <span class="help-block">Name of the Branch</span>
                                                 </div>
                                             </div>
 
@@ -95,11 +74,10 @@
 
                                 require ('layouts/database.php');
 
-                                $bank =$_POST['bank'];
-                                $account =$_POST['account'];
-                                $holderName =$_POST['holderName'];
+                                $name =$_POST['name'];
+                                $branch =$_POST['branch'];
 
-                                $sql="INSERT INTO bank_account (bank,account,holderName) VALUES ('$bank','$account','$holderName')";
+                                $sql="INSERT INTO bank (name,branch) VALUES ('$name','$branch')";
     
 
                                 if (mysqli_query($db, $sql) === TRUE) {
@@ -127,7 +105,7 @@
                             <!-- START DEFAULT DATATABLE -->
                             <div class="panel panel-default">
                                 <div class="panel-heading">                                
-                                    <h3 class="panel-title">Bank & Accounts Informations</h3>
+                                    <h3 class="panel-title">Bank Informations</h3>
                                     <ul class="panel-controls">
                                         <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
                                         <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
@@ -139,23 +117,21 @@
                                         <thead>
                                             <tr>
                                                 <th>Bank</th>
-                                                <th>Cheque Number</th>
-                                                <th>Holder Name</th>
+                                                <th>Branch</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         <?php 
                                             include("layouts/database.php");
-                                            $sql= "SELECT * FROM bank_account ";
+                                            $sql= "SELECT * FROM bank ";
                                             $result = $db->query($sql);  
                                             while($row = $result->fetch_assoc()) {
                                         ?>
                                             <tr>
-                                                <td><?php echo $row['bank'] ?></td>
-                                                <td><?php echo $row['account'] ?></td>
-                                                <td><?php echo $row['holderName'] ?></td>
-                                                <td><button class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true" onclick="location.href='bankac.php?id=<?php echo $row['id'] ?>'"></i></button></td>
+                                                <td><?php echo $row['name'] ?></td>
+                                                <td><?php echo $row['branch'] ?></td>
+                                                <td><button class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true" onclick="location.href='bank_mgt.php?id=<?php echo $row['id'] ?>'"></i></button></td>
                                             </tr>
                                             <?php  } ?>
                                         </tbody>
@@ -163,7 +139,7 @@
                                      <?php
                                     if(isset($_GET['id'])){
                                         $id = $_GET['id'];
-                                        $sql= "delete from bank_account where id = '$id'";
+                                        $sql= "delete from bank where id = '$id'";
                                         mysqli_query($db,$sql);
 
                                         echo'<script>';

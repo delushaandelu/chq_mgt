@@ -56,15 +56,14 @@
                         <a href="#"><span class="fa fa-cogs"></span> <span class="xn-text">Bank</span></a>                        
                         <ul>
                             <li><a href="bankac.php"><span class="fa fa-list-alt"></span> Manage Bank Accounts</a></li>                            
-                            <li><a href="ui-elements.html"><span class="fa fa-cogs"></span> Manage Banks</a></li>
-                            <li><a href="ui-buttons.html"><span class="fa fa-square-o"></span> View Info</a></li>                            
+                            <li><a href="bank_mgt.php"><span class="fa fa-cogs"></span> Manage Banks</a></li>                        
                             </ul>
                     </li>                    
                     <li class="xn-openable">
                         <a href="#"><span class="fa fa-pencil"></span> <span class="xn-text">Setting</span></a>
                         <ul>
                             <li><a href="form-wizards.html"><span class="fa fa-arrow-right"></span> Take Backup</a></li>
-                            <li><a href="form-elements.html"><span class="fa fa-file-text-o"></span> Change Username</a></li>
+                            <li><a href="user.php"><span class="fa fa-file-text-o"></span> Manager User</a></li>
                             <li><a href="form-validation.html"><span class="fa fa-list-alt"></span> Change Password</a></li>
                         </ul>
                     </li>

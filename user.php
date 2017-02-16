@@ -37,35 +37,26 @@
                                         
                                         <div class="col-md-6">
                                             
-                                            <div class="form-group">
-                                                <label class="col-md-3 control-label">Bank Name</label>
-                                                <div class="col-md-9">                                                                                            
-                                                    <select class="form-control select" name="bank">
-                                                    <?php 
-                                                        include("layouts/database.php");
-                                                        $sql= "SELECT * FROM bank ";
-                                                        $result = $db->query($sql);  
-                                                        while($row = $result->fetch_assoc()) {
-                                                    ?>
-                                                        <option><?php echo $row['name'] ?></option>
-                                                    <?php
-                                                        }
-                                                    ?>
-                                                    </select>
-                                                    <span class="help-block">Select the bank here</span>
-                                                </div>
-                                            </div>
-
-                                            
-
-                                            <div class="form-group">
-                                                <label class="col-md-3 control-label">Account Number</label>
+                                           <div class="form-group">
+                                                <label class="col-md-3 control-label">Full Name</label>
                                                 <div class="col-md-9">                                            
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                        <input type="text" name="account" class="form-control"/>
+                                                        <input type="text" name="fullname" class="form-control"/>
                                                     </div>                                            
-                                                    <span class="help-block">Account number here</span>
+                                                    <span class="help-block">User full name</span>
+                                                </div>
+                                            </div>
+                                            
+
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label">Username</label>
+                                                <div class="col-md-9">                                            
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+                                                        <input type="text" name="username" class="form-control"/>
+                                                    </div>                                            
+                                                    <span class="help-block">Account username</span>
                                                 </div>
                                             </div>
                                             
@@ -73,13 +64,13 @@
                                         <div class="col-md-6">
 
                                             <div class="form-group">
-                                                <label class="col-md-3 control-label">Holder Name</label>
+                                                <label class="col-md-3 control-label">Password</label>
                                                 <div class="col-md-9">                                            
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                                        <input type="text" name="holderName" class="form-control"/>
+                                                        <input type="text" name="password" class="form-control"/>
                                                     </div>                                            
-                                                    <span class="help-block">Account holder name</span>
+                                                    <span class="help-block">Account password</span>
                                                 </div>
                                             </div>
 
@@ -95,11 +86,11 @@
 
                                 require ('layouts/database.php');
 
-                                $bank =$_POST['bank'];
-                                $account =$_POST['account'];
-                                $holderName =$_POST['holderName'];
+                                $fullname =$_POST['fullname'];
+                                $username =$_POST['username'];
+                                $password =$_POST['password'];
 
-                                $sql="INSERT INTO bank_account (bank,account,holderName) VALUES ('$bank','$account','$holderName')";
+                                $sql="INSERT INTO user (fullname,username,password) VALUES ('$fullname','$username','$password')";
     
 
                                 if (mysqli_query($db, $sql) === TRUE) {
@@ -127,7 +118,7 @@
                             <!-- START DEFAULT DATATABLE -->
                             <div class="panel panel-default">
                                 <div class="panel-heading">                                
-                                    <h3 class="panel-title">Bank & Accounts Informations</h3>
+                                    <h3 class="panel-title">User Accounts Informations</h3>
                                     <ul class="panel-controls">
                                         <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
                                         <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
@@ -138,24 +129,22 @@
                                     <table class="table datatable">
                                         <thead>
                                             <tr>
-                                                <th>Bank</th>
-                                                <th>Cheque Number</th>
-                                                <th>Holder Name</th>
+                                                <th>Full Name</th>
+                                                <th>Username</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                         <?php 
                                             include("layouts/database.php");
-                                            $sql= "SELECT * FROM bank_account ";
+                                            $sql= "SELECT * FROM user ";
                                             $result = $db->query($sql);  
                                             while($row = $result->fetch_assoc()) {
                                         ?>
                                             <tr>
-                                                <td><?php echo $row['bank'] ?></td>
-                                                <td><?php echo $row['account'] ?></td>
-                                                <td><?php echo $row['holderName'] ?></td>
-                                                <td><button class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true" onclick="location.href='bankac.php?id=<?php echo $row['id'] ?>'"></i></button></td>
+                                                <td><?php echo $row['fullname'] ?></td>
+                                                <td><?php echo $row['username'] ?></td>
+                                                <td><button class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true" onclick="location.href='user.php?id=<?php echo $row['id'] ?>'"></i></button></td>
                                             </tr>
                                             <?php  } ?>
                                         </tbody>
@@ -167,7 +156,7 @@
                                         mysqli_query($db,$sql);
 
                                         echo'<script>';
-                                        echo"alert('Success | Record Deleted Successfully!')";
+                                        echo"alert('Success | New user added to the system!')";
                                         echo'</script>';
 
                                     }

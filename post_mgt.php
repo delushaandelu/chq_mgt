@@ -45,6 +45,7 @@
                                                 <th>Name</th>
                                                 <th>Cheque Date</th>
                                                 <th>Today Date</th>
+                                                <th>Action</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -62,10 +63,23 @@
                                                 <td><?php echo $row['name'] ?></td>
                                                 <td><?php echo $row['chqDate'] ?></td>
                                                 <td><?php echo $row['todayDate'] ?></td>
+                                                <td><button class="btn btn-primary"><i class="fa fa-trash-o" aria-hidden="true" onclick="location.href='post_mgt.php?id=<?php echo $row['id'] ?>'"></i></button></td>
                                             </tr>
                                             <?php  } ?>
                                         </tbody>
                                     </table>
+                                    <?php
+                                    if(isset($_GET['id'])){
+                                        $id = $_GET['id'];
+                                        $sql= "delete from post_chq where id = '$id'";
+                                        mysqli_query($db,$sql);
+
+                                        echo'<script>';
+                                        echo"alert('Success | Record Deleted Successfully!')";
+                                        echo'</script>';
+
+                                    }
+                                    ?>
                                 </div>
                             </div>
                             <!-- END DEFAULT DATATABLE -->

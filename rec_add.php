@@ -39,11 +39,16 @@
                                                 <label class="col-md-3 control-label">Bank Name</label>
                                                 <div class="col-md-9">                                                                                            
                                                     <select class="form-control select" name="bank">
-                                                        <option>Option 1</option>
-                                                        <option>Option 2</option>
-                                                        <option>Option 3</option>
-                                                        <option>Option 4</option>
-                                                        <option>Option 5</option>
+                                                        <?php 
+                                                        include("layouts/database.php");
+                                                        $sql= "SELECT * FROM bank ";
+                                                        $result = $db->query($sql);  
+                                                        while($row = $result->fetch_assoc()) {
+                                                    ?>
+                                                        <option><?php echo $row['name'] ?></option>
+                                                    <?php
+                                                        }
+                                                    ?>
                                                     </select>
                                                     <span class="help-block">Select the bank here</span>
                                                 </div>
