@@ -25,9 +25,9 @@
         }
         </script>                                          
     </head>
+    <?php include("layouts/header.php");?>
     <body>
          <!-- HEADER SECTION -->  
-       <?php include("layouts/header.php");?>
         <div class="page-content-wrap" id="print">
         <a href="javascript:void(0);" id="print_button2" style="width: 130px; padding: 5px 8px 5px 8px;text-align: center;float: right;background-color: #1caf9a;color: #fff;text-decoration: none; margin: 10px;" onclick="printPageArea('print')">Print</a>
             <div class="row">
@@ -36,7 +36,7 @@
                             <!-- START DEFAULT DATATABLE -->
                             <div class="panel panel-default">
                                 <div class="panel-heading">                                
-                                    <h3 class="panel-title">POST CHEQUES INFORMATIONS</h3>
+                                    <h3 class="panel-title">Received CHEQUES INFORMATIONS</h3>
                                     <ul class="panel-controls">
                                         <li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
                                         <li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
@@ -88,7 +88,7 @@
                                     }
                                     ?>
                                 </div>
-                            </div>
+                            
                             <!-- END DEFAULT DATATABLE -->
 
                         </div>
