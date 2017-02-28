@@ -1,9 +1,9 @@
 <?php
 //DB details
-$dbHost = 'localhost';
-$dbUsername = 'root';
-$dbPassword = '';
-$dbName = 'chq';
+$dbHost = 'us-cdbr-azure-southcentral-f.cloudapp.net';
+$dbUsername = 'b52096aa77cd92';
+$dbPassword = '7770cd2f';
+$dbName = 'base_b';
 
 //Create connection and select DB
 $db = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
